@@ -22,7 +22,7 @@ class SimonSaysGame {
     playSequence() {
         const intervalDuration = 1000;
         setTimeout(() => {
-        
+        for()
         }, intervalDuration);
     }
  }
