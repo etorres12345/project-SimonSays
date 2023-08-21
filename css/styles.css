@@ -1,0 +1,59 @@
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+.intro-heading {
+    font-size: 6em;
+
+}
+.button1 {
+    background-color: red;
+}
+.button2 {
+    background-color: yellow;
+}
+.button3 {
+    background-color: blue;
+}
+.button4 {
+    background-color:green;
+}
+.start-color {
+    border-radius: 10%;
+    width: 25em;
+    height: 14em;
+    border: none;
+    margin: 0 .5em;
+}
+ul {
+    font-size: 2.5em;
+    list-style: none;
+}
+li {
+    padding: .3em;
+}
+#start-button {
+    font-size: 4em;
+    border-radius: 10px;
+    border: none;
+    background-color: burlywood;
+    margin-bottom: 3em;
+}
+#game-container {
+   display: none;
+}
+#game-heading {
+    font-size: 6em;
+}
+.game-button {
+    width: 30em;
+    height: 15em;
+    margin-top: 5em;
+}
+.level {
+    font-size: 5em;
+}
+#game-end {
+    margin-top: 28em;
+    display: none;
+}
