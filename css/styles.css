@@ -1,10 +1,10 @@
 * {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    background-color: chocolate;
 }
 .intro-heading {
-    font-size: 6em;
-
+    font-size: 5em;
 }
 .button1 {
     background-color: red;
@@ -20,41 +20,44 @@
 }
 .start-color {
     border-radius: 10%;
-    width: 25em;
-    height: 14em;
+    width: 15em;
+    height: 10em;
     border: none;
-    margin: 0 .5em;
+    margin: 0 .2em;
+    box-shadow: 8px 10px 8px rgba(118, 45, 45, 0.2);
 }
 ul {
-    font-size: 2.5em;
+    font-size: 1.8em;
     list-style: none;
 }
 li {
-    padding: .3em;
+    padding: .2em;
 }
 #start-button {
-    font-size: 4em;
+    font-size: 2em;
     border-radius: 10px;
+    padding: .6em;
     border: none;
     background-color: burlywood;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    box-shadow: 8px 10px 8px rgba(118, 45, 45, 0.2);
 }
 #game-container {
    display: none;
 }
 #game-heading {
-    font-size: 6em;
+    font-size: 5em;
 }
 .game-button {
-    width: 20em;
-    height: 20em;
+    width: 15em;
+    height: 15em;
     border: none;
-    margin: 5em 1em 0 1em;
+    margin: 0 1em 0 1em;
     box-shadow: 8px 10px 8px rgba(118, 45, 45, 0.2);
     border-radius: 10px;
 }
 .game-paragraph {
-    font-size: 4em;
+    font-size: 3em;
 }
 .blue {
     background-color: blue;
@@ -68,12 +71,10 @@ li {
 .red {
     background-color: red;
 }
-
 .level {
     font-size: 5em;
 }
 #game-end {
-    margin-top: 28em;
     display: none;
 }
 .hideAudio {
@@ -81,4 +82,38 @@ li {
 }
 .turnedOn {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+.game-button.pressed {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+.end-heading {
+    font-size: 4em;
+}
+#restart-button {
+    font-size: 2em;
+    border-radius: 10px;
+    padding: .6em;
+    border: none;
+    background-color: burlywood;
+    box-shadow: 8px 10px 8px rgba(118, 45, 45, 0.2);
+    margin-top: .1em;
+}
+.troll {
+    margin: 3em;
+    width: 15em;
+}
+.level-display {
+    font-size: 2em;
+}
+.game-end-level {
+    display: block;
+    font-size: 2em;
+}
+.rotate {
+    animation: rotate 1.5s infinite;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
 }

@@ -29,6 +29,7 @@
             <button class="game-button yellow" data-game-button='yellow'></button>
             <button class="game-button red" data-game-button='red'></button>
             <p class="game-paragraph info"></p>
+            <span class="level-display">Level 1</span>
         </div>
 
         <div class="hideAudio">
@@ -39,9 +40,11 @@
         </div>
 
         <div id="game-end">
-            <h1>GAME OVER!</h1>
-            <br />
-            <button id="restart-button"></button>
+            <h1 class="end-heading">GAME OVER!</h1>
+            <span class="game-end-level"></span>
+            <img class="troll rotate" src="/images/Trollface_non-free.png" /> 
+            <br /> 
+            <button id="restart-button">start again</button>
         </div>
     </main>
     <script type="text/javascript" src="./js/script.js"></script>
