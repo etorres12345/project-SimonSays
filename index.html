@@ -24,11 +24,18 @@
 
         <div id="game-container">
             <h1 id="game-heading">CAN YOU MATCH THE SEQUENCE?</h1>
-            <button class="game-button blue"></button>
-            <button class="game-button green"></button>
-            <button class="game-button yellow"></button>
-            <button class="game-button red"></button>
-            <p class="level">Level 1</p>
+            <button class="game-button blue" data-game-button='blue'></button>
+            <button class="game-button green" data-game-button='green'></button>
+            <button class="game-button yellow" data-game-button='yellow'></button>
+            <button class="game-button red" data-game-button='red'></button>
+            <p class="game-paragraph info"></p>
+        </div>
+
+        <div class="hideAudio">
+            <audio src="./audio/26878__vexst__bass-stab.wav" data-sound="blue"></audio>
+            <audio src="./audio/26886__vexst__kick-2.wav" data-sound="green"></audio>
+            <audio src="./audio/26883__vexst__crash-snare.wav" data-sound="yellow"></audio>
+            <audio src="./audio/26887__vexst__kick-3.wav" data-sound="red"></audio>
         </div>
 
         <div id="game-end">

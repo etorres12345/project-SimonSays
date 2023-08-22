@@ -46,14 +46,39 @@ li {
     font-size: 6em;
 }
 .game-button {
-    width: 30em;
-    height: 15em;
-    margin-top: 5em;
+    width: 20em;
+    height: 20em;
+    border: none;
+    margin: 5em 1em 0 1em;
+    box-shadow: 8px 10px 8px rgba(118, 45, 45, 0.2);
+    border-radius: 10px;
 }
+.game-paragraph {
+    font-size: 4em;
+}
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}
+.yellow {
+    background-color: yellow;
+}
+.red {
+    background-color: red;
+}
+
 .level {
     font-size: 5em;
 }
 #game-end {
     margin-top: 28em;
     display: none;
+}
+.hideAudio {
+    display: none;
+}
+.turnedOn {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
 }
