@@ -1,29 +1,39 @@
 class SimonSaysGame {
   constructor() {
+    // Game Properties
     this.colors = ["blue", "green", "yellow", "red"];
     this.sequence = [];
     this.humanSequence = [];
     this.level = 1;
-    this.randomColor = Math.floor(Math.random() * this.colors.length);
+    this.initialRender = true;
+    this.disableClick = document.getElementsByClassName("unclickable");
+
+    // Page Elements
     this.startScreen = document.getElementById("game-intro");
-    this.startButton = document.getElementById("start-button");
     this.gameContainer = document.getElementById("game-container");
-    this.paragraphLevel = document.getElementsByClassName("level");
+    this.endScreen = document.querySelector("#game-end");
+
+    // Button Elements
+    this.startButton = document.getElementById("start-button");
     this.gameButtons = document.getElementsByClassName("game-button");
+    this.restartButton = document.querySelector("#restart-button");
+
+    // Game information Display
+    this.message = document.querySelector(".info");
+    this.levelDisplay = document.querySelector(".level-display");
+    this.paragraphLevel = document.getElementsByClassName("level");
+    this.endLevel = document.querySelector(".game-end-level");
+
+    // Event Listeners
     this.startButton.addEventListener("click", () => {
       this.startGame();
     });
-    this.restartButton = document.querySelector("#restart-button");
     this.restartButton.addEventListener("click", () => {
       this.restart();
     });
-    this.message = document.querySelector(".info");
-    this.endScreen = document.querySelector("#game-end");
-    this.levelDisplay = document.querySelector(".level-display");
-    this.endLevel = document.querySelector(".game-end-level");
-    this.disableClick = document.getElementsByClassName("unclickable");
-    this.initialRender = true;
   }
+
+  // When user clicks a button after the computer sequence:
   getUserInput(color) {
     this.humanSequence.push(color);
 
@@ -39,6 +49,7 @@ class SimonSaysGame {
       }
     }
   }
+
   checkSequences() {
     for (let i = 0; i < this.sequence.length; i++) {
       if (this.sequence[i] !== this.humanSequence[i]) {
@@ -47,10 +58,14 @@ class SimonSaysGame {
     }
     return true;
   }
+
+  // Picks a random color for the next step
   nextStep() {
     const random = this.colors[Math.floor(Math.random() * this.colors.length)];
     return random;
   }
+
+  //
   nextRound() {
     if (this.initialRender) {
       this.initialRender = false;
@@ -61,8 +76,8 @@ class SimonSaysGame {
         this.message.textContent = `Computer's turn! ${
           this.sequence.length
         } Tap${this.sequence.length > 1 ? "s" : ""}`;
-        this.playRound(this.sequence);
         this.enableUserInput();
+        this.playRound(this.sequence); //display computer sequence
       }, delayBtwRounds);
       return;
     }
@@ -75,12 +90,14 @@ class SimonSaysGame {
       this.message.textContent = `Computer's turn! ${this.sequence.length} Tap${
         this.sequence.length > 1 ? "s" : ""
       }`;
-      this.playRound(this.sequence);
       this.enableUserInput();
+      this.playRound(this.sequence); //display computer sequence
     }, delayBtwRounds);
   }
+
   playRound(nextSequence) {
     let delay = 0;
+    this.disableUserInput();
     nextSequence.forEach((color, index) => {
       setTimeout(() => {
         this.colorButton(color);
@@ -95,6 +112,7 @@ class SimonSaysGame {
       this.enableUserInput();
     }, delay + 500);
   }
+
   colorButton(color) {
     const buttonToLight = document.querySelector(
       `[data-game-button='${color}']`
@@ -108,43 +126,54 @@ class SimonSaysGame {
     setTimeout(() => {
       buttonToLight.classList.remove("turnedOn");
       buttonToLight.style.border = "none";
-    }, 300);
+    }, 250);
   }
+
   enableUserInput() {
-    const gameButtons = document.getElementsByClassName("game-button");
-    for (const button of gameButtons) {
+    for (const button of this.gameButtons) {
       button.disabled = false;
     }
   }
+
+  disableUserInput() {
+    for (const button of this.gameButtons) {
+      button.disabled = true;
+    }
+  }
+
   playSound(color) {
     const sound = document.querySelector(`[data-sound='${color}']`);
     sound.play();
   }
+
   playPassSound() {
     const soundPass = document.querySelector(`[data-sound='passYay']`);
     soundPass.play();
   }
+
   playEndSound() {
     const endSound = document.querySelector(`[data-sound='endLaugh']`);
     endSound.play();
   }
+
   startGame() {
     this.startScreen.style.display = "none";
     this.gameContainer.style.display = "block";
-    console.log("starting game");
     this.message.textContent = `Computer's turn! ${
       this.sequence.length + 1
     } Tap${this.sequence.length > 1 ? "s" : ""}`;
     setTimeout(() => {
       this.nextRound();
-    }, 1000);
+    }, 700);
   }
+
   endGame() {
     this.endScreen.style.display = "block";
     this.gameContainer.style.display = "none";
     this.endLevel.textContent = `Level Achieved: ${this.level - 1}`;
     this.playEndSound();
   }
+
   restart() {
     this.endScreen.style.display = "none";
     this.startScreen.style.display = "block";
@@ -155,6 +184,7 @@ class SimonSaysGame {
     this.initialRender = true;
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   const simonGame = new SimonSaysGame();
 
@@ -171,4 +201,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-//feature branch add test
