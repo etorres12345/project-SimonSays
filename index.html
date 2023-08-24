@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon Says</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
     <main>
-        <div id="game-intro">
-            <h1 class="intro-heading">SIMON SAYS!</h1>
-            <button class="button1 start-color"></button>
-            <button class="button2 start-color"></button>
-            <button class="button3 start-color"></button>
-            <button class="button4 start-color"></button>
-            <ul>
-                <li>4 different colored buttons!</li>
-                <li>Can you remember the computer's sequence?</li>
-                <li>Match the sequence to move on to the next level!</li>
-            </ul>
-            <button id="start-button">LET'S GO!</button>
-        </div>
+      <div id="game-intro">
+        <h1 class="intro-heading">SIMON SAYS!</h1>
+        <button class="button1 start-color"></button>
+        <button class="button2 start-color"></button>
+        <button class="button3 start-color"></button>
+        <button class="button4 start-color"></button>
+        <ul>
+          <li>4 different colored buttons!</li>
+          <li>Can you remember the computer's sequence?</li>
+          <li>Match the sequence to move on to the next level!</li>
+        </ul>
+        <button id="start-button">LET'S GO!</button>
+      </div>
 
-        <div id="game-container">
-            <h1 id="game-heading">CAN YOU MATCH THE SEQUENCE?</h1>
-            <button class="game-button blue" data-game-button='blue'></button>
-            <button class="game-button green" data-game-button='green'></button>
-            <button class="game-button yellow" data-game-button='yellow'></button>
-            <button class="game-button red" data-game-button='red'></button>
-            <p class="game-paragraph info"></p>
-            <span class="level-display">Level 1</span>
-        </div>
+      <div id="game-container">
+        <h1 id="game-heading">CAN YOU MATCH THE SEQUENCE?</h1>
+        <button class="game-button blue" data-game-button="blue"></button>
+        <button class="game-button green" data-game-button="green"></button>
+        <button class="game-button yellow" data-game-button="yellow"></button>
+        <button class="game-button red" data-game-button="red"></button>
+        <p class="game-paragraph info"></p>
+        <span class="level-display">Level 1</span>
+      </div>
 
-        <div class="hideAudio">
-            <audio src="./audio/26878__vexst__bass-stab.wav" data-sound="blue"></audio>
-            <audio src="./audio/26886__vexst__kick-2.wav" data-sound="green"></audio>
-            <audio src="./audio/26883__vexst__crash-snare.wav" data-sound="yellow"></audio>
-            <audio src="./audio/26887__vexst__kick-3.wav" data-sound="red"></audio>
-            <audio src="./audio/126113__klankbeeld__laugh.wav" data-sound="endLaugh"></audio>
-            <audio src="./audio/99636__tomlija__small-crowd-yelling-yeah.wav" data-sound="passYay"></audio>
-        </div>
+      <div class="hideAudio">
+        <audio
+          src="./audio/26878__vexst__bass-stab.wav"
+          data-sound="blue"
+        ></audio>
+        <audio
+          src="./audio/26886__vexst__kick-2.wav"
+          data-sound="green"
+        ></audio>
+        <audio
+          src="./audio/26883__vexst__crash-snare.wav"
+          data-sound="yellow"
+        ></audio>
+        <audio src="./audio/26887__vexst__kick-3.wav" data-sound="red"></audio>
+        <audio
+          src="./audio/126113__klankbeeld__laugh.wav"
+          data-sound="endLaugh"
+        ></audio>
+        <audio
+          src="./audio/99636__tomlija__small-crowd-yelling-yeah.wav"
+          data-sound="passYay"
+        ></audio>
+      </div>
 
-        <div id="game-end">
-            <h1 class="end-heading">GAME OVER!</h1>
-            <span class="game-end-level"></span>
-            <img class="troll rotate" src="/images/Trollface_non-free.png" /> 
-            <br /> 
-            <button id="restart-button">start again</button>
-        </div>
+      <div id="game-end">
+        <h1 class="end-heading">GAME OVER!</h1>
+        <span class="game-end-level"></span>
+        <img class="troll rotate" src="images/Trollface_non-free.png" />
+        <br />
+        <button id="restart-button">start again</button>
+      </div>
     </main>
     <script type="text/javascript" src="./js/script.js"></script>
-</body>
+  </body>
 </html>
