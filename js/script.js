@@ -65,7 +65,7 @@ class SimonSaysGame {
     return random;
   }
 
-  //
+  // start next round of game
   nextRound() {
     if (this.initialRender) {
       this.initialRender = false;
@@ -95,24 +95,27 @@ class SimonSaysGame {
     }, delayBtwRounds);
   }
 
+  // Display the game sequence
   playRound(nextSequence) {
     let delay = 0;
     this.disableUserInput();
     nextSequence.forEach((color, index) => {
       setTimeout(() => {
-        this.colorButton(color);
+        this.colorButton(color); //Display the highlighted game button with delay
       }, delay);
-      delay += 1400;
+      delay += 1400; // Increase the delay for each next game button highlight
     });
 
+    // setTimout to display user turn message and enable clicking
     setTimeout(() => {
       this.message.textContent = `Your turn! ${this.sequence.length} Tap${
         this.sequence.length > 1 ? "s" : ""
       }`;
       this.enableUserInput();
-    }, delay + 500);
+    }, delay + 300);
   }
 
+  // Highlight game button and play associated sound
   colorButton(color) {
     const buttonToLight = document.querySelector(
       `[data-game-button='${color}']`
@@ -129,12 +132,14 @@ class SimonSaysGame {
     }, 250);
   }
 
+  // enable game buttons
   enableUserInput() {
     for (const button of this.gameButtons) {
       button.disabled = false;
     }
   }
 
+  // disable game buttons
   disableUserInput() {
     for (const button of this.gameButtons) {
       button.disabled = true;
